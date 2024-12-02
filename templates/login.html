@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        /* Header */
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+
+        /* Form Styling */
+        form {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            form {
+                padding: 20px;
+                width: 85%;
+            }
+
+            input[type="password"] {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            input[type="submit"] {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+
+            form {
+                padding: 15px;
+                width: 90%;
+            }
+
+            input[type="password"] {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+
+            input[type="submit"] {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Login</h1>
+    <form action="{{ url_for('login') }}" method="POST">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
